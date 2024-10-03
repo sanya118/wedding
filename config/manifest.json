@@ -2,7 +2,7 @@
     "name": "Sangam's Wedding",
     "short_name": "SangamDiWedding",
     "start_url": "/wedding",
-    "display": "standalone",
+    "display": "fullscreen",
     "background_color": "#ffffff",
     "theme_color": "#000000",
     "description": "Sanya Weds Agam",
@@ -31,7 +31,7 @@
         "form_factor": "wide"
       },
       {
-        "src": "../images/icons/wedding512.png",
+        "src": "../images/icons/wedding1024.png",
         "sizes": "512x512",
         "type": "image/png",
         "form_factor": "narrow"
