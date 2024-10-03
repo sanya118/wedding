@@ -8,12 +8,17 @@
     "description": "Sanya Weds Agam",
     "icons": [
       {
-        "src": "images/icons/wedding192.png",
+        "src": "./images/icons/wedding144.png",
+        "sizes": "144x144",
+        "type": "image/png"
+      },
+      {
+        "src": "./images/icons/wedding192.png",
         "sizes": "192x192",
         "type": "image/png"
       },
       {
-        "src": "images/icons/wedding512.png",
+        "src": "./images/icons/wedding512.png",
         "sizes": "512x512",
         "type": "image/png"
       }
