@@ -25,13 +25,13 @@
     ],
     "screenshots": [
       {
-        "src": "../images/icons/wedding512.png",
+        "src": "../images/icons/wedding1024.png",
         "sizes": "1024x1024",
         "type": "image/png",
         "form_factor": "wide"
       },
       {
-        "src": "../images/icons/wedding1024.png",
+        "src": "../images/icons/wedding512.png",
         "sizes": "512x512",
         "type": "image/png",
         "form_factor": "narrow"
