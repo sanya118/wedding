@@ -22,6 +22,20 @@
         "sizes": "512x512",
         "type": "image/png"
       }
+    ],
+    "screenshots": [
+      {
+        "src": "../images/icons/wedding512.png",
+        "sizes": "1024x1024",
+        "type": "image/png",
+        "form_factor": "wide"
+      },
+      {
+        "src": "../images/icons/wedding512.png",
+        "sizes": "512x512",
+        "type": "image/png",
+        "form_factor": "narrow"
+      }
     ]
   }
   
