@@ -3,7 +3,7 @@ const filesToCache = [
   '/',
   '/index.html',
   '/images/icons/wedding192.png',
-  '/images/icons/wedding12.png',
+  '/images/icons/wedding512.png',
   // Add other files that need to be cached
 ];
 
