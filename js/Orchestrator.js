@@ -26,7 +26,7 @@ Notification.requestPermission().then((permission) => {
 
 // Function to get FCM token
 function getFCMToken() {
-  messaging.getToken({ vapidKey: 'BJU0uXCS0t8HmE23OTzkWURj-01UBTK_NhPg0O-FJlD9Wkyc66jUkS6O0Cbv9qjeZjDnMaqF0EwOp4oV1VOzP9Y' }).then((currentToken) => {
+  messaging.getToken({ vapidKey: 'BC5RsvHOub_csru0gwh11LNR6rTEwYeu1D' }).then((currentToken) => {
     if (currentToken) {
       console.log('FCM Token:', currentToken);
       // Store token to send push notifications later
