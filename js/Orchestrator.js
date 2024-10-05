@@ -9,6 +9,9 @@ const firebaseConfig = {
   measurementId: "G-HC8FLV6WR0"
 };
 
+// Declare messaging variable
+let messaging;
+
 // Register service worker
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('/wedding/config/firebase-messaging-sw.js')
@@ -16,6 +19,8 @@ if ('serviceWorker' in navigator) {
           console.log('Service Worker registered:', registration);
           // Initialize Firebase after successful registration
           firebase.initializeApp(firebaseConfig);
+          // Initialize Firebase Messaging
+          messaging = firebase.messaging(); // Initialize here after app is created
           // Now request notification permission
           requestNotificationPermission();
       }).catch((err) => {
@@ -35,11 +40,13 @@ function requestNotificationPermission() {
   });
 }
 
-// Initialize Firebase Messaging
-const messaging = firebase.messaging();
-
 // Function to get FCM token
 function getFCMToken() {
+  if (!messaging) {
+      console.error('Messaging not initialized.');
+      return;
+  }
+  
   messaging.getToken({ vapidKey: 'BC5RsvHOub_csru0gwh11LNR6rTEwYeu1D' }).then((currentToken) => {
       if (currentToken) {
           console.log('FCM Token:', currentToken);
