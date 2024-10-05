@@ -26,7 +26,7 @@ Notification.requestPermission().then((permission) => {
 
 // Function to get FCM token
 function getFCMToken() {
-  messaging.getToken({ vapidKey: 'AIzaSyDSx1Wb3E4X0eWAJoTYfIRFASkU5JIae84' }).then((currentToken) => {
+  messaging.getToken({ vapidKey: 'BJU0uXCS0t8HmE23OTzkWURj-01UBTK_NhPg0O-FJlD9Wkyc66jUkS6O0Cbv9qjeZjDnMaqF0EwOp4oV1VOzP9Y' }).then((currentToken) => {
     if (currentToken) {
       console.log('FCM Token:', currentToken);
       // Store token to send push notifications later
@@ -40,7 +40,7 @@ function getFCMToken() {
 
 // Register service worker
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/wedding/firebase-messaging-sw.js')
+  navigator.serviceWorker.register('../config/firebase-messaging-sw.js')
     .then((registration) => {
       console.log('Service Worker registered:', registration);
     }).catch((err) => {
