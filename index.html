@@ -18,16 +18,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="js/EventManager.js"></script>
 </div>
-<script>
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('https://artisticgeek.github.io/wedding/config/firebase-messaging-sw.js')
-          .then((registration) => {
-            console.log('Service Worker registered:', registration);
-          }).catch((err) => {
-            console.error('Service Worker registration failed:', err);
-          });
-      }
 
-  </script>
   </body>
 </html>
