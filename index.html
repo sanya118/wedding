@@ -19,15 +19,15 @@
     <script src="js/EventManager.js"></script>
 </div>
 <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', function() {
-        navigator.serviceWorker.register('config/service-worker.js').then(function(registration) {
-          console.log('ServiceWorker registration successful with scope: ', registration.scope);
-        }, function(error) {
-          console.log('ServiceWorker registration failed: ', error);
-        });
-      });
-    }
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('https://artisticgeek.github.io/wedding/config/firebase-messaging-sw.js')
+          .then((registration) => {
+            console.log('Service Worker registered:', registration);
+          }).catch((err) => {
+            console.error('Service Worker registration failed:', err);
+          });
+      }
+
   </script>
   </body>
 </html>
