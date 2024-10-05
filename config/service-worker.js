@@ -6,15 +6,21 @@ const filesToCache = [
   '/images/icons/wedding512.png',
 ];
 
-self.addEventListener('install', (event) => {
+self.addEventListener('install', event => {
   event.waitUntil(
-    caches.open(cacheName)
-      .then(cache => {
-        return cache.addAll(filesToCache);
-      })
-      .catch(error => {
-        console.error('Failed to cache resources:', error);
-      })
+    caches.open(cacheName).then(cache => {
+      console.log('Caching app shell');
+      return Promise.all(
+        filesToCache.map(file => {
+          return fetch(file).then(response => {
+            if (!response.ok) {
+              throw new Error(`Failed to fetch ${file}: ${response.status}`);
+            }
+            return cache.add(file);
+          });
+        })
+      );
+    })
   );
 });
 
