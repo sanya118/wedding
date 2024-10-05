@@ -14,11 +14,13 @@ const messaging = firebase.messaging();
 
 messaging.onBackgroundMessage(function(payload) {
   console.log('[firebase-messaging-sw.js] Received background message ', payload);
-  const notificationTitle = payload.notification.title;
+  
+  const notificationTitle = payload.notification.title || 'Default Title';
   const notificationOptions = {
-    body: payload.notification.body,
-    icon: '../images/icons/wedding192.png'
+    body: payload.notification.body || 'Default body message.',
+    icon: 'https://artisticgeek.github.io/wedding/images/icons/wedding144.png' // Ensure this path is correct
   };
 
-  self.registration.showNotification(notificationTitle, notificationOptions);
+  self.registration.showNotification(notificationTitle, notificationOptions)
+    .catch(error => console.error('Error showing notification:', error));
 });

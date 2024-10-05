@@ -1,9 +1,10 @@
-const cacheName = 'wedding-app-v1';
+const cacheName = 'wedding-app-v1'; // Consider changing this for updates
 const filesToCache = [
   '/',
   '/index.html',
   '/images/icons/wedding192.png',
   '/images/icons/wedding512.png',
+  // Add other essential files like CSS and JS
 ];
 
 self.addEventListener('install', event => {
@@ -16,12 +17,15 @@ self.addEventListener('install', event => {
             if (!response.ok) {
               throw new Error(`Failed to fetch ${file}: ${response.status}`);
             }
-            return cache.add(file);
+            return cache.add(file).catch(error => {
+              console.error('Failed to cache:', error);
+            });
           });
         })
       );
     })
   );
+  self.skipWaiting(); // Activate the new service worker immediately
 });
 
 self.addEventListener('activate', event => {
@@ -43,9 +47,10 @@ self.addEventListener('activate', event => {
 self.addEventListener('fetch', event => {
   event.respondWith(
     caches.match(event.request).then(response => {
-      return response || fetch(event.request);
-    }).catch(error => {
-      console.error('Fetch failed:', error);
+      return response || fetch(event.request).catch(error => {
+        console.error('Fetch failed:', error);
+        // Optionally return a fallback response here
+      });
     })
   );
 });
