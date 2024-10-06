@@ -1,7 +1,7 @@
 {
     "name": "Sangam's Wedding",
     "short_name": "SangamDiWedding",
-    "start_url": "/wedding",
+    "start_url": "/wedding/",
     "scope":"/wedding/",
     "display": "fullscreen",
     "background_color": "#ffffff",
