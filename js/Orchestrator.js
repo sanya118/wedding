@@ -14,7 +14,7 @@ let messaging;
 
 // Register service worker
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('https://artisticgeek.github.io/wedding/firebase-messaging-sw.js')
+  navigator.serviceWorker.register('firebase-messaging-sw.js')
       .then((registration) => {
           console.log('Service Worker registered:', registration);
           // Initialize Firebase after successful registration
