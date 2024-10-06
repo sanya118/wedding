@@ -47,7 +47,7 @@ function getFCMToken() {
       return;
   }
   
-  messaging.getToken({ vapidKey: 'BC5RsvHOub_csru0gwh11LNR6rTEwYeu1D' }).then((currentToken) => {
+  messaging.getToken({ vapidKey: 'BC5RsvHOub_csru0gwh11LNR6rTEwYeu1D-UThoPC02M2ztV33RwgMNV8v38YbKkVbMKY6KGReceB3ID' }).then((currentToken) => {
       if (currentToken) {
           console.log('FCM Token:', currentToken);
           // Store token to send push notifications later
