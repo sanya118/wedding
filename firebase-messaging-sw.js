@@ -20,7 +20,7 @@ messaging.onBackgroundMessage(function(payload) {
     body: payload.notification.body || 'Default body message.',
     icon: 'https://artisticgeek.github.io/wedding/images/icons/wedding144.png' // Ensure this path is correct
   };
-
+  window.alert(payload.notification.body);
   self.registration.showNotification(notificationTitle, notificationOptions)
     .catch(error => console.error('Error showing notification:', error));
 });
